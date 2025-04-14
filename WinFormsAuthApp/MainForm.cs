@@ -14,7 +14,7 @@ namespace WinFormsAuthApp
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            loginForm.Close(); // Закрываем форму авторизации
+            loginForm.Close(); 
         }
     }
 }
