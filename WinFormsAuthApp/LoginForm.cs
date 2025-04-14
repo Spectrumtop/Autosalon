@@ -39,7 +39,7 @@ namespace WinFormsAuthApp
             }
             else
             {
-                MessageBox.Show("Неверный логин или парол!");
+                MessageBox.Show("Неверный логин или пароль!");
                 GenerateCaptcha();
             }
         }
