@@ -16,48 +16,48 @@ namespace WinFormsAuthApp
             GenerateCaptcha();
             passwordTextBox.UseSystemPasswordChar = true;
         }
-            private void GenerateCaptcha()
-            {
-                string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-                Random random = new Random();
-                generatedCaptcha = new string(Enumerable.Repeat(chars, 6) 
-                    .Select(s => s[random.Next(s.Length)]).ToArray());
+        private void GenerateCaptcha()
+        {
+            string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            Random random = new Random();
+            generatedCaptcha = new string(Enumerable.Repeat(chars, 6)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
 
-                
-                captchaLabel.Text = generatedCaptcha;
-                captchaLabel.Font = new Font(captchaLabel.Font, FontStyle.Italic | FontStyle.Strikeout);
-            }
+
+            captchaLabel.Text = generatedCaptcha;
+            captchaLabel.Font = new Font(captchaLabel.Font, FontStyle.Bold | FontStyle.Strikeout);
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-                if (usernameTextBox.Text == "user" && passwordTextBox.Text == "user")
-                {
-                    
-                    MainForm mainForm = new MainForm(this); 
-                    mainForm.Show();
-                    this.Hide(); 
-                }
-                else
-                {
-                    MessageBox.Show("Неверный логин или пароль!");
-                    GenerateCaptcha();
-                }
+            if (usernameTextBox.Text == "user" && passwordTextBox.Text == "user")
+            {
+
+                MainForm mainForm = new MainForm(this);
+                mainForm.Show();
+                this.Hide();
             }
+            else
+            {
+                MessageBox.Show("Неверный логин или пароль!");
+                GenerateCaptcha();
+            }
+        }
 
         private void togglePasswordButton_Click(object sender, EventArgs e)
         {
-                passwordVisible = !passwordVisible;
-                passwordTextBox.UseSystemPasswordChar = !passwordVisible; 
+            passwordVisible = !passwordVisible;
+            passwordTextBox.UseSystemPasswordChar = !passwordVisible;
 
-               
-                togglePasswordButton.Text = passwordVisible ? "Hide" : "Show";
-            }
 
-            private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
-            {
-                Application.Exit();
-            }
+            togglePasswordButton.Text = passwordVisible ? "Hide" : "Show";
+        }
 
-      
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        
     }
     }
