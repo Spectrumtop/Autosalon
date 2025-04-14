@@ -25,7 +25,7 @@ namespace WinFormsAuthApp
 
 
             captchaLabel.Text = generatedCaptcha;
-            captchaLabel.Font = new Font(captchaLabel.Font, FontStyle.Bold | FontStyle.Strikeout);
+            captchaLabel.Font = new Font(captchaLabel.Font, FontStyle.Italic | FontStyle.Strikeout);
         }
 
         private void button1_Click(object sender, EventArgs e)
